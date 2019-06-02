@@ -25,10 +25,6 @@ svg{
   transform-origin: 50% 50%;
   transform: scale(0.2);
   fill:#676764;
-  cursor: pointer;
-}
-.eyes{
-  transform-origin: 50% 50%;
 }
 .button{
   transform-origin: 50% 50%;
