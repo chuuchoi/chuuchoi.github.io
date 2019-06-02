@@ -61,13 +61,7 @@ function canBounce(){
 }
 function canBalloon(){
 	$( ".button" ).mousedown(function(e) {
-		var long = true;
-		setTimeout(function(){
-			if(long) $( ".button" ).trigger( "balloonEvent",[e.pageX , e.pageY]);
-		},500) //long press = 500ms press
-		$( ".button" ).bind( "mouseup mouseleave", function() {
-			long=false;
-		});
+		alert(2);
 	});
 }
 function bounce(){
@@ -145,7 +139,6 @@ var bounceUp3 = anime({
 
 var bal = anime({
 	autoplay: false,
-	delay:666,
 	targets: '.nemoh',
 	fill:'#fA4123',
 	scale:[0.215, 0.97],
