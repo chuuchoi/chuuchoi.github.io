@@ -17,7 +17,7 @@ $( document ).ready(function() {
 	})
 	canBounce();
 	canBalloon();
-	$( ".button" ).bind( "balloonEvent", function( e, x, y ) {
+	$( ".button" ).bind( "balloonEvent", function() {
 		var leave=0;
 		$( ".button" ).off( "click");//cannot bounce while balloon event
 		$( ".button" ).off( "mousedown");//cannot balloon while balloon event
@@ -60,10 +60,10 @@ function canBounce(){
 	});
 }
 function canBalloon(){
-	$( ".button" ).mousedown(function(e) {
+	$( ".button" ).mousedown(function() {
 		var long = true;
 		setTimeout(function(){
-			if(long) $( ".button" ).trigger( "balloonEvent",[e.pageX , e.pageY]);
+			if(long) $( ".button" ).trigger( "balloonEvent");
 		},1000) //long press = 1000ms press
 		$( ".button" ).bind( "mouseup mouseleave", function() {
 			long=false;
