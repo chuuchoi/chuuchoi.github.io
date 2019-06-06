@@ -212,7 +212,7 @@ var effect = anime({
 	translateY:[10,20],
 	opacity:0.2,
 	direction:'normal',
-	duration:2300,
+	duration:1800,
 	easing: 'linear',
 });
 $('body').click(function(event) {
