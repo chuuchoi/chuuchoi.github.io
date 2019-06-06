@@ -208,12 +208,12 @@ var effect = anime({
 	delay:90,
 	autoplay:false,
 	targets:'.nem',
-	scale:[0.8,1.7],
+	scale:[0.8,1.5],
 	translateY:[10,20],
 	opacity:0.2,
 	direction:'normal',
-	duration:1800,
-	easing: 'linear',
+	duration:2300,
+	easing: 'easeOutQuad',
 });
 $('body').click(function(event) {
 	/* Act on the event */
