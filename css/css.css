@@ -31,6 +31,15 @@ svg{
   fill:transparent;
   cursor: pointer;
 }
+.shadow{
+  transform-origin: 50% 50%;
+  transform: scale(0.2);
+}
+.nem{
+  transform-origin: 50% 50%;
+  fill:#444444;
+  opacity: 0;
+}
 section{
   background: #FAFAFA;
 }
