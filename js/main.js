@@ -28,10 +28,15 @@ $( document ).ready(function() {
 				++leave;
 				if(charged){
 					bal3.play();
+					effect.pause();
+					effect.seek(0);
 					bal4.play();
 				}
 				else{
 					bal.reverse();
+					effect.pause();
+					effect.seek(0);
+
 				}
 			}
 		});
@@ -41,9 +46,14 @@ $( document ).ready(function() {
 				++leave;
 				if(charged){
 					bal3.play();
+					effect.pause();
+					effect.seek(0);
+					bal4.play();
 				}
 				else{
 					bal.reverse();
+					effect.pause();
+					effect.seek(0);
 				}
 			}
 		});
@@ -64,7 +74,7 @@ function canBalloon(){
 		var long = true;
 		setTimeout(function(){
 			if(long) $( ".button" ).trigger( "balloonEvent");
-		},1000) //long press = 1000ms press
+		},500); //long press = 500ms press
 		$( ".button" ).bind( "mouseup mouseleave", function() {
 			long=false;
 		});
@@ -78,8 +88,8 @@ function bounce(){
 function balloon(){
 	br.pause();
 	if(bal.reversed){
-		bal.seek(10);  bal.reverse(); bal.play();
-	}else bal.play();
+		bal.seek(10);  bal.reverse(); bal.play(); effect.play();
+	}else bal.play(); effect.play();
 }
 
 var bounceDown1 = anime({
@@ -145,9 +155,8 @@ var bounceUp3 = anime({
 
 var bal = anime({
 	autoplay: false,
-	targets: '.nemoh',
-	fill:'#fA4123',
-	scale:[0.215, 0.97],
+	targets: '.nemoh, .button',
+	scale:[0.215, 0.96],
 	direction:'normal',
 	duration:2300,
 	easing:'easeOutQuad',
@@ -158,24 +167,23 @@ var bal = anime({
 			canBalloon();
 		}else{
 			bal2.play();
-			setTimeout(function(){charged=true;},500)
+			setTimeout(function(){charged=true;},10);
 		}
 	}
 });
 var bal2 = anime({
 	autoplay: false,
-	scale:[0.96,0.98],
+	scale:[0.96,0.962],
 	targets: '.nemoh',
 	direction:'alternate',
-	duration:300,
-	easing:'easeOutQuad',
+	duration:100,
+	easing:'linear',
 	loop:true,
 });
 var bal3 = anime({
 	autoplay: false,
-	scale:[0.97,0.2],
-	targets: '.nemoh',
-	fill:'#f9c200',
+	scale:[0.961,0.2],
+	targets: '.nemoh,.button',
 	direction:'normal',
 	duration:1600,
 	easing: 'easeOutElastic',
@@ -188,11 +196,26 @@ var bal3 = anime({
 	}
 });
 var bal4 = anime({
-	delay:100,
+	delay:90,
 	autoplay:false,
 	targets:'.eyes',
 	scale:[1,0.3],
 	direction:'alternate',
-	duration:200,
+	duration:210,
 	easing: 'easeOutQuad',
+});
+var effect = anime({
+	delay:90,
+	autoplay:false,
+	targets:'.nem',
+	scale:[0.8,1.7],
+	translateY:[10,20],
+	opacity:0.2,
+	direction:'normal',
+	duration:2300,
+	easing: 'linear',
+});
+$('body').click(function(event) {
+	/* Act on the event */
+	
 });
