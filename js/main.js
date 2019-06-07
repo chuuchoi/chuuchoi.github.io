@@ -28,8 +28,6 @@ $( document ).ready(function() {
 				++leave;
 				if(charged){
 					bal3.play();
-					effect.pause();
-					effect.seek(0);
 					bal4.play();
 				}
 				else{
@@ -46,14 +44,10 @@ $( document ).ready(function() {
 				++leave;
 				if(charged){
 					bal3.play();
-					effect.pause();
-					effect.seek(0);
 					bal4.play();
 				}
 				else{
 					bal.reverse();
-					effect.pause();
-					effect.seek(0);
 				}
 			}
 		});
@@ -88,8 +82,8 @@ function bounce(){
 function balloon(){
 	br.pause();
 	if(bal.reversed){
-		bal.seek(10);  bal.reverse(); bal.play(); effect.play();
-	}else bal.play(); effect.play();
+		bal.seek(10);  bal.reverse(); bal.play();
+	}else bal.play();
 }
 
 var bounceDown1 = anime({
@@ -208,7 +202,6 @@ var effect = anime({
 	delay:90,
 	autoplay:false,
 	targets:'.nem',
-	scale:[0.8,1.3],
 	translateY:[10,20],
 	direction:'normal',
 	duration:2300,
