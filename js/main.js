@@ -210,7 +210,6 @@ var effect = anime({
 	targets:'.nem',
 	scale:[0.8,1.3],
 	translateY:[10,20],
-	opacity:0.1,
 	direction:'normal',
 	duration:2300,
 	easing: 'easeOutQuad',
